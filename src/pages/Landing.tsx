@@ -38,6 +38,46 @@ const Landing = () => {
   const wave2Y = useTransform(scrollY, [0, 500], [0, 100]);
   const wave3Y = useTransform(scrollY, [0, 500], [0, 150]);
 
+  const roles = [
+    {
+      title: "Verifier",
+      desc: "For HR professionals, recruiters, and verification specialists",
+      icon: UserCheck,
+      features: ["Upload & verify certificates", "Bulk verification tools", "Real-time fraud alerts"],
+      color: "role-verifier",
+      bgClass: "bg-role-verifier",
+      hoverClass: "hover:bg-role-verifier/90",
+      link: "/signup?role=verifier",
+    },
+    {
+      title: "Institution",
+      desc: "For universities, schools, and certification bodies",
+      icon: Building2,
+      features: ["Issue digital certificates", "Blockchain verification", "Analytics & reporting"],
+      color: "role-institution",
+      bgClass: "bg-role-institution",
+      hoverClass: "hover:bg-role-institution/90",
+      link: "/signup?role=institution",
+    },
+    {
+      title: "Administrator",
+      desc: "For system administrators and compliance officers",
+      icon: Crown,
+      features: ["System-wide oversight", "Fraud trend analysis", "Audit logs & compliance"],
+      color: "role-admin",
+      bgClass: "bg-role-admin",
+      hoverClass: "hover:bg-role-admin/90",
+      link: "/signup?role=admin",
+    },
+  ];
+
+  const features = [
+    { icon: Shield, title: "Blockchain Security", desc: "Immutable verification records", color: "primary" },
+    { icon: UserCheck, title: "AI Fraud Detection", desc: "99.9% accuracy", color: "accent" },
+    { icon: CheckCircle, title: "Instant Verification", desc: "Real-time validation", color: "success" },
+    { icon: Building2, title: "Institution Trust", desc: "Trusted by 500+ organizations", color: "role-institution" },
+  ];
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-background">
       {/* Floating particles */}
@@ -47,57 +87,33 @@ const Landing = () => {
           initial={{ y: p.y, opacity: 0.7 }}
           animate={{ y: [p.y, p.y + 50, p.y], x: [p.x, p.x + 30, p.x] }}
           transition={{ repeat: Infinity, duration: 8 + Math.random() * 4, delay: p.delay, ease: "easeInOut" }}
-          className="absolute rounded-full"
+          className="absolute rounded-full pointer-events-none"
           style={{ width: p.size, height: p.size, backgroundColor: p.color }}
         />
       ))}
 
       {/* Animated gradient background */}
       <motion.div
-        className="absolute inset-0 z-0 opacity-10 blur-3xl animate-gradient-slow"
+        className="absolute inset-0 z-0 opacity-10 blur-3xl animate-gradient-slow pointer-events-none"
         animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
         transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
       />
 
       {/* Scroll-animated SVG Waves */}
-      <motion.svg className="absolute top-0 left-0 w-full h-64" style={{ y: wave1Y }} viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path
-          fill="url(#waveGradient1)"
-          d="M0,64L48,85.3C96,107,192,149,288,181.3C384,213,480,235,576,218.7C672,203,768,149,864,138.7C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L0,0Z"
-        ></path>
-        <defs>
-          <linearGradient id="waveGradient1" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#10B981" stopOpacity="0.3" />
-          </linearGradient>
-        </defs>
-      </motion.svg>
-
-      <motion.svg className="absolute top-10 left-0 w-full h-64" style={{ y: wave2Y }} viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path
-          fill="url(#waveGradient2)"
-          d="M0,192L48,186.7C96,181,192,171,288,165.3C384,160,480,160,576,165.3C672,171,768,181,864,192C960,203,1056,213,1152,192C1248,171,1344,117,1392,90.7L1440,64L1440,0L0,0Z"
-        ></path>
-        <defs>
-          <linearGradient id="waveGradient2" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.2" />
-          </linearGradient>
-        </defs>
-      </motion.svg>
-
-      <motion.svg className="absolute top-20 left-0 w-full h-64" style={{ y: wave3Y }} viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path
-          fill="url(#waveGradient3)"
-          d="M0,160L48,138.7C96,117,192,75,288,85.3C384,96,480,160,576,181.3C672,203,768,181,864,165.3C960,149,1056,139,1152,154.7C1248,171,1344,213,1392,234.7L1440,256L1440,0L0,0Z"
-        ></path>
-        <defs>
-          <linearGradient id="waveGradient3" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#F472B6" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.25" />
-          </linearGradient>
-        </defs>
-      </motion.svg>
+      {[{ id: 1, y: wave1Y, gradient: "waveGradient1", d: "M0,64L48,85.3C96,107,192,149,288,181.3C384,213,480,235,576,218.7C672,203,768,149,864,138.7C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L0,0Z", colors: ["#3B82F6", "#10B981"] },
+        { id: 2, y: wave2Y, gradient: "waveGradient2", d: "M0,192L48,186.7C96,181,192,171,288,165.3C384,160,480,160,576,165.3C672,171,768,181,864,192C960,203,1056,213,1152,192C1248,171,1344,117,1392,90.7L1440,64L1440,0L0,0Z", colors: ["#F59E0B", "#3B82F6"] },
+        { id: 3, y: wave3Y, gradient: "waveGradient3", d: "M0,160L48,138.7C96,117,192,75,288,85.3C384,96,480,160,576,181.3C672,203,768,181,864,165.3C960,149,1056,139,1152,154.7C1248,171,1344,213,1392,234.7L1440,256L1440,0L0,0Z", colors: ["#F472B6", "#3B82F6"] }
+      ].map(wave => (
+        <motion.svg key={wave.id} className={`absolute top-${wave.id * 10} left-0 w-full h-64 pointer-events-none`} style={{ y: wave.y }} viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path fill={`url(#${wave.gradient})`} d={wave.d}></path>
+          <defs>
+            <linearGradient id={wave.gradient} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor={wave.colors[0]} stopOpacity={0.3} />
+              <stop offset="100%" stopColor={wave.colors[1]} stopOpacity={0.3} />
+            </linearGradient>
+          </defs>
+        </motion.svg>
+      ))}
 
       {/* Header */}
       <AppHeader />
@@ -152,32 +168,7 @@ const Landing = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            {
-              title: "Verifier",
-              desc: "For HR professionals, recruiters, and verification specialists",
-              icon: UserCheck,
-              features: ["Upload & verify certificates", "Bulk verification tools", "Real-time fraud alerts"],
-              color: "role-verifier",
-              link: "/signup?role=verifier",
-            },
-            {
-              title: "Institution",
-              desc: "For universities, schools, and certification bodies",
-              icon: Building2,
-              features: ["Issue digital certificates", "Blockchain verification", "Analytics & reporting"],
-              color: "role-institution",
-              link: "/signup?role=institution",
-            },
-            {
-              title: "Administrator",
-              desc: "For system administrators and compliance officers",
-              icon: Crown,
-              features: ["System-wide oversight", "Fraud trend analysis", "Audit logs & compliance"],
-              color: "role-admin",
-              link: "/signup?role=admin",
-            },
-          ].map((role, idx) => (
+          {roles.map((role, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05, rotateY: 5 }}
@@ -185,7 +176,7 @@ const Landing = () => {
               className={`bg-background border-l-4 border-l-${role.color} rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition-all`}
             >
               <CardHeader className="pb-4">
-                <div className={`w-16 h-16 flex items-center justify-center rounded-lg bg-${role.color}/20 mb-4`}>
+                <div className={`w-16 h-16 flex items-center justify-center rounded-lg ${role.bgClass}/20 mb-4`}>
                   <role.icon className={`h-8 w-8 text-${role.color} animate-bounce-slow`} />
                 </div>
                 <CardTitle className="text-xl">{role.title}</CardTitle>
@@ -198,9 +189,11 @@ const Landing = () => {
                     {feature}
                   </div>
                 ))}
-                <Button className={`w-full mt-4 bg-${role.color} hover:bg-${role.color}/90`} asChild>
-                  <Link to={role.link}>Get Started</Link>
-                </Button>
+                <Link to={role.link} className="w-full block">
+                  <Button className={`w-full mt-4 ${role.bgClass} ${role.hoverClass}`}>
+                    Get Started
+                  </Button>
+                </Link>
               </CardContent>
             </motion.div>
           ))}
@@ -217,12 +210,7 @@ const Landing = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-          {[
-            { icon: Shield, title: "Blockchain Security", desc: "Immutable verification records", color: "primary" },
-            { icon: UserCheck, title: "AI Fraud Detection", desc: "99.9% accuracy", color: "accent" },
-            { icon: CheckCircle, title: "Instant Verification", desc: "Real-time validation", color: "success" },
-            { icon: Building2, title: "Institution Trust", desc: "Trusted by 500+ organizations", color: "role-institution" },
-          ].map((feature, idx) => (
+          {features.map((feature, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -241,9 +229,9 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer Section */}
       <footer className="border-t bg-muted/30 py-12 px-4 relative">
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-primary to-accent opacity-10 blur-xl rotate-12"></div>
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-primary to-accent opacity-10 blur-xl rotate-12 pointer-events-none"></div>
         <div className="container mx-auto grid md:grid-cols-4 gap-8 relative z-10">
           <div>
             <div className="flex items-center space-x-2 mb-4">
