@@ -1,0 +1,92 @@
+{
+  "landing": {
+    "title": "CertifyPro",
+    "subtitle": "सुरक्षित डिजिटल प्रमाणपत्र सत्यापन मंच",
+    "description": "ब्लॉकचेन-समर्थित सुरक्षा के साथ शैक्षणिक और व्यावसायिक प्रमाणपत्रों को सत्यापित करें। तेज़, विश्वसनीय और दुनिया भर की संस्थाओं द्वारा विश्वसनीय।",
+    "getStarted": "शुरू करें",
+    "learnMore": "और जानें",
+    "login": "लॉगिन"
+  },
+  "auth": {
+    "login": "लॉगिन",
+    "signup": "साइन अप करें",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "rememberMe": "मुझे याद रखें",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "dontHaveAccount": "खाता नहीं है?",
+    "alreadyHaveAccount": "पहले से ही खाता है?",
+    "signInWithGoogle": "Google के साथ साइन इन करें",
+    "twoFactorAuth": "दो-कारक प्रमाणीकरण",
+    "enterCode": "अपने प्रमाणक ऐप से 6-अंकीय कोड दर्ज करें",
+    "verify": "सत्यापित करें",
+    "back": "वापस"
+  },
+  "dashboard": {
+    "welcome": "फिर से स्वागत है",
+    "search": "प्रमाणपत्र, छात्र या संस्थान खोजें...",
+    "quickActions": "त्वरित क्रियाएं",
+    "recentActivity": "हाल की गतिविधि",
+    "statistics": "सांख्यिकी"
+  },
+  "verifier": {
+    "title": "सत्यापनकर्ता डैशबोर्ड",
+    "verifyCertificate": "प्रमाणपत्र सत्यापित करें",
+    "uploadDocument": "दस्तावेज़ अपलोड करें",
+    "bulkVerification": "थोक सत्यापन",
+    "viewReports": "रिपोर्ट देखें",
+    "searchPlaceholder": "प्रमाणपत्र आईडी या छात्र नाम से खोजें...",
+    "totalVerifications": "कुल सत्यापन",
+    "pendingReviews": "लंबित समीक्षाएं",
+    "verifiedToday": "आज सत्यापित",
+    "rejectionRate": "अस्वीकृति दर",
+    "userGuide": "उपयोगकर्ता गाइड",
+    "contactSupport": "सहायता से संपर्क करें",
+    "settings": "सेटिंग्स"
+  },
+  "institution": {
+    "title": "संस्थान डैशबोर्ड",
+    "issueCertificate": "प्रमाणपत्र जारी करें",
+    "bulkUpload": "थोक अपलोड",
+    "viewReports": "रिपोर्ट देखें",
+    "settings": "सेटिंग्स",
+    "totalIssued": "जारी किए गए प्रमाणपत्र",
+    "activeStudents": "सक्रिय छात्र",
+    "pendingIssuance": "लंबित जारी करना",
+    "verificationRequests": "सत्यापन अनुरोध"
+  },
+  "admin": {
+    "title": "व्यवस्थापक डैशबोर्ड",
+    "manageUsers": "उपयोगकर्ताओं का प्रबंधन करें",
+    "systemSettings": "सिस्टम सेटिंग्स",
+    "auditLogs": "ऑडिट लॉग",
+    "analytics": "विश्लेषण"
+  },
+  "common": {
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "close": "बंद करें",
+    "submit": "सबमिट करें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "warning": "चेतावनी",
+    "info": "जानकारी",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "confirm": "पुष्टि करें",
+    "notifications": "सूचनाएं",
+    "profile": "प्रोफ़ाइल",
+    "logout": "लॉग आउट",
+    "language": "भाषा",
+    "theme": "थीम",
+    "help": "सहायता"
+  },
+  "roles": {
+    "verifier": "सत्यापनकर्ता",
+    "institution": "संस्थान",
+    "admin": "व्यवस्थापक"
+  }
+}
